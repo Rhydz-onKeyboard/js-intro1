@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alejandro Díaz (Rhy)">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin Titulo</title>
+    
+    <!-- importar bootstrap local -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- importar fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
+    <!-- importar iconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- importar estilo propio-->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+</head>
+<body>
+    <main class="container">
+        <section class="row row-cols-2 py-3">
+            <div class="col">
+                <h3 class="px-3">Operaciones con dos números</h3>
+                <h5 class="p-3">Ingresa dos números</h5>
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Número 1</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Ingresa un número" aria-label="num1" aria-describedby="input-first-number" id="num1">
+                </div>
+
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Número 2</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Ingresa un segundo número" aria-label="num2" aria-describedby="input-second-number" id="num2">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-dark px-5" onclick="getValueInput()">Aritmética    </button>
+                </div>
+            </div>
+
+            <div class="col p-5" >
+                <div id="resultado">
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+        <section class="row row-cols-2 py-3">
+            <div class="col">
+                <h3 class="px-3">Conversor unidades temperatura</h3>
+                <h5 class="p-3">Ingresa la temperatura en °Celcius</h5>
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Temperatura</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="La temperatura" aria-label="temp" aria-describedby="input-temp" id="temp">
+                </div>
+                
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-dark px-5" onclick="conv()">Convertir</button>
+                </div>
+            </div>
+
+            <div class="col p-5" >
+                <div id="conversor">
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+        <section class="row row-cols-2 py-3">
+            <div class="col">
+                <h3 class="px-3">Conversor días</h3>
+                <h5 class="p-3">Ingresa la cantidad de días</h5>
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Días</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Los días a consultar" aria-label="dias" aria-describedby="input-dias" id="dias">
+                </div>
+                
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-dark px-5" onclick="cv()">Convertir</button>
+                </div>
+            </div>
+
+            <div class="col p-5" >
+                <div id="cvDias">
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+        <section class="row row-cols-2 py-3">
+            <div class="col">
+                <h3 class="px-3">Suma y promedio</h3>
+                <h5 class="p-3">Ingresa 5 números</h5>
+                
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Número 1</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Ingresa un número" aria-label="numero1" aria-describedby="input-numero1" id="numero1">
+                </div>
+                                
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Número 2</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Ingresa un número" aria-label="numero2" aria-describedby="input-numero2" id="numero2">
+                </div>
+                                
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Número 3</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Ingresa un número" aria-label="numero3" aria-describedby="input-numero3" id="numero3">
+                </div>
+                                
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Número 4</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Ingresa un número" aria-label="numero4" aria-describedby="input-numero4" id="numero4">
+                </div>           
+
+                <div class="input-group my-3 mx-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Número 5</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Ingresa un número" aria-label="numero5" aria-describedby="input-numero5" id="numero5">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-dark px-5" onclick="sumYprom()">Resultado</button>
+                </div>
+            </div>
+
+            <div class="col p-5" >
+                <div id="sumProm">
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- script para importar jquery -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <!-- script para importar popper -->
+    <script src="./assets/js/popper.min.js"></script>
+    <!-- script para importar boostrap -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <!-- script para importar main.js -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
